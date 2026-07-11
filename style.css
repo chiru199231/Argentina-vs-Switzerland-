@@ -2,304 +2,169 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,sans-serif;
+font-family:Arial,Helvetica,sans-serif;
 }
 
 body{
-
-background:#0d0d0d;
-color:white;
-overflow-x:hidden;
-
-}
-
-.overlay{
-
-position:fixed;
-inset:0;
-
-background:
-radial-gradient(circle at top,#1c1c1c,#000);
-
-z-index:-1;
-
+background:#111;
+color:#fff;
+padding:12px;
 }
 
 .container{
-
-width:100%;
-padding:15px;
-
+max-width:700px;
+margin:auto;
 }
 
 .header{
-
-background:linear-gradient(135deg,#222,#111);
-
-border:2px solid gold;
-
-border-radius:18px;
-
-padding:20px;
-
+background:linear-gradient(135deg,#202020,#111);
+border:2px solid #FFD700;
+border-radius:20px;
+padding:18px;
 text-align:center;
-
-box-shadow:0 0 25px rgba(255,215,0,.4);
-
+box-shadow:0 0 20px rgba(255,215,0,.25);
+margin-bottom:18px;
 }
 
 .header h1{
-
-font-size:30px;
-letter-spacing:2px;
-color:gold;
-
+font-size:28px;
+color:#FFD700;
+margin-bottom:8px;
 }
 
-.vs{
-
-font-size:40px;
-
-font-weight:bold;
-
-color:white;
-
-margin:10px 0;
-
-}
-
-.header p{
-
-margin-top:8px;
-
+.header h2{
 font-size:18px;
-
-color:#ddd;
-
+color:#fff;
+margin-bottom:12px;
 }
 
 .prizeBox{
-
 display:grid;
-
 grid-template-columns:repeat(2,1fr);
-
-gap:10px;
-
-margin:20px 0;
-
+gap:8px;
+margin:15px 0;
 }
 
 .prizeBox div{
-
-background:#1f1f1f;
-
-border:1px solid gold;
-
+background:#222;
 padding:10px;
-
 border-radius:10px;
-
+border:1px solid #FFD700;
 font-weight:bold;
-
 }
 
 .unlock{
-
-display:flex;
-
-flex-direction:column;
-
-gap:10px;
-
+margin-top:15px;
 }
 
 .unlock input{
-
+width:100%;
 padding:14px;
-
-font-size:18px;
-
-border:none;
-
 border-radius:10px;
-
+border:none;
+font-size:18px;
 text-align:center;
-
-outline:none;
-
+margin-bottom:10px;
 }
 
 .unlock button{
-
-padding:15px;
-
-background:gold;
-
-color:black;
-
-font-size:18px;
-
-font-weight:bold;
-
+width:100%;
+padding:14px;
 border:none;
-
 border-radius:10px;
-
+background:#FFD700;
+color:#111;
+font-size:18px;
+font-weight:bold;
 cursor:pointer;
-
-}
-
-.unlock button:hover{
-
-background:#ffdf40;
-
 }
 
 .tickets{
-
-margin-top:20px;
-
 display:grid;
-
 grid-template-columns:repeat(2,1fr);
-
 gap:14px;
-
 }
 
 .ticket{
-
-height:165px;
-
-border-radius:16px;
-
+height:190px;
 position:relative;
-
 transform-style:preserve-3d;
-
-transition:.8s;
-
+transition:0.8s;
 }
 
 .ticket.flip{
-
 transform:rotateY(180deg);
-
 }
 
 .front,
 .back{
-
 position:absolute;
-
 width:100%;
 height:100%;
-
-border-radius:16px;
-
+border-radius:18px;
 backface-visibility:hidden;
-
 display:flex;
-
 flex-direction:column;
-
 justify-content:center;
-
 align-items:center;
-
 padding:12px;
-
 }
 
 .front{
-
-background:linear-gradient(145deg,#2b2b2b,#141414);
-
-border:2px solid gold;
-
-box-shadow:0 0 12px rgba(255,215,0,.3);
-
-}
-
-.ticketNo{
-
-font-size:28px;
-
-font-weight:bold;
-
-color:gold;
-
-}
-
-.lock{
-
-font-size:40px;
-
-margin-top:15px;
-
+background:linear-gradient(135deg,#2c2c2c,#1a1a1a);
+border:2px solid #FFD700;
 }
 
 .back{
-
+background:linear-gradient(135deg,#005BBB,#D52B1E);
+border:2px solid #fff;
 transform:rotateY(180deg);
+}
 
-background:linear-gradient(135deg,#0b5394,#c00000);
+.ticketNo{
+font-size:20px;
+font-weight:bold;
+color:#FFD700;
+margin-bottom:12px;
+}
 
-border:2px solid white;
-
+.lock{
+font-size:42px;
 }
 
 .player{
-
 font-size:16px;
-
 font-weight:bold;
-
 text-align:center;
-
 line-height:1.4;
+}
 
+.vs{
+font-size:24px;
+margin:10px 0;
 }
 
 .star{
-
 border:3px solid gold !important;
-
-box-shadow:0 0 20px gold !important;
-
+box-shadow:0 0 20px gold;
 }
 
 @media(max-width:430px){
 
 .header h1{
-
 font-size:24px;
-
-}
-
-.vs{
-
-font-size:30px;
-
 }
 
 .ticket{
-
-height:150px;
-
+height:170px;
 }
 
 .player{
-
 font-size:14px;
-
 }
 
 .ticketNo{
-
-font-size:24px;
-
+font-size:18px;
 }
 
 }
