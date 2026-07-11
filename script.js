@@ -1,85 +1,86 @@
 const container = document.getElementById("ticketContainer");
-const btn = document.getElementById("unlockBtn");
+const unlockBtn = document.getElementById("unlockBtn");
 
-tickets.forEach((data) => {
+function createTickets() {
 
-    const card = document.createElement("div");
+    tickets.forEach(data => {
 
-    card.className = "ticket";
+        const ticket = document.createElement("div");
 
-    if (data.ticket >= 14) {
-        card.classList.add("star");
-    }
+        ticket.className = "ticket";
 
-    card.innerHTML = `
+        if(data.ticket >= 14){
+            ticket.classList.add("star");
+        }
 
-    <div class="front">
+        ticket.innerHTML = `
 
-        <div class="ticketNo">
-            Ticket ${data.ticket}
+        <div class="front">
+
+            <div class="ticketNo">
+                🎫 Ticket ${data.ticket}
+            </div>
+
+            <div class="lock">🔒</div>
+
+            <p>Locked</p>
+
         </div>
 
-        <div class="lock">🔒</div>
+        <div class="back">
 
-        <small>Locked</small>
+            <div class="ticketNo">
+                🎫 Ticket ${data.ticket}
+            </div>
 
-    </div>
+            <div class="player">
+                🇦🇷<br>
+                ${data.argentina}
+            </div>
 
-    <div class="back">
+            <div class="vs">
+                ⚽
+            </div>
 
-        <div class="player">
-            🇦🇷<br>
-            ${data.argentina}
+            <div class="player">
+                🇨🇭<br>
+                ${data.switzerland}
+            </div>
+
         </div>
 
-        <br>
+        `;
 
-        <div style="font-size:22px;">
-            ⚽
-        </div>
+        container.appendChild(ticket);
 
-        <br>
+    });
 
-        <div class="player">
-            🇨🇭<br>
-            ${data.switzerland}
-        </div>
+}
 
-    </div>
+createTickets();
 
-    `;
+unlockBtn.addEventListener("click", () => {
 
-    container.appendChild(card);
-
-});
-
-btn.addEventListener("click", () => {
-
-    const code =
-        document
+    const code = document
         .getElementById("masterCode")
         .value
         .trim()
         .toUpperCase();
 
-    if (code !== "GOAT") {
+    if(code !== "GOAT"){
 
-        alert("Wrong Code!");
-
+        alert("❌ Wrong Code");
         return;
 
     }
 
-    document
-        .querySelectorAll(".ticket")
-        .forEach(card => {
+    document.querySelectorAll(".ticket").forEach(ticket => {
 
-            card.classList.add("flip");
+        ticket.classList.add("flip");
 
-        });
+    });
 
-    btn.innerHTML = "✅ TICKETS UNLOCKED";
-
-    btn.disabled = true;
+    unlockBtn.innerHTML = "✅ TICKETS UNLOCKED";
+    unlockBtn.disabled = true;
 
 });
