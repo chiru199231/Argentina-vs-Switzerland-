@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Argentina 🇦🇷 vs Switzerland 🇨🇭 | 23 Tickets</title>
+<title>Argentina 🇦🇷 vs Switzerland 🇨🇭</title>
 
 <link rel="stylesheet" href="style.css">
 </head>
@@ -15,23 +16,49 @@
 
 <h1>🇦🇷 Argentina vs Switzerland 🇨🇭</h1>
 
-<h2>Quarter Final</h2>
+<h2>FIFA World Cup 2026</h2>
 
-<p class="price">Ticket Price : ₹50</p>
+<h3>Quarter Final</h3>
 
-<p>🏆 1st Prize : ₹500</p>
+<div class="details">
+<p>🎫 Ticket Price : ₹50</p>
+<p>🥇 1st Prize : ₹500</p>
 <p>🥈 2nd Prize : ₹300</p>
 <p>🥉 3rd Prize : ₹200</p>
+</div>
 
-<p class="code">
-Reveal Code :
-<b>GOAT</b>
-</p>
+<div class="codeBox">
+
+<input
+type="password"
+id="masterCode"
+placeholder="Enter Reveal Code">
+
+<button id="revealBtn">
+🔓 Reveal All Tickets
+</button>
+
+</div>
 
 </header>
 
-<div class="ticket-container" id="ticketContainer">
+<main>
+
+<div
+id="ticketContainer"
+class="ticket-grid">
 </div>
+
+</main>
+
+<footer>
+
+<p>
+Enter the correct code to reveal all
+23 Argentina 🇦🇷 + Switzerland 🇨🇭 player pairs.
+</p>
+
+</footer>
 
 <script src="players.js"></script>
 <script src="script.js"></script>
